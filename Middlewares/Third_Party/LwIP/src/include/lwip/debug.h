@@ -45,7 +45,7 @@
  * @ingroup lwip_opts_debugmsg
  * @{
  */
-
+#define LWIP_DEBUG
 /** @name Debug level (LWIP_DBG_MIN_LEVEL)
  * @{
  */
