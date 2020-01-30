@@ -97,6 +97,8 @@
 #define CHECKSUM_CHECK_ICMP 0
 /*----- Value in opt.h for CHECKSUM_CHECK_ICMP6: 1 -----*/
 #define CHECKSUM_CHECK_ICMP6 0
+/*----- Default Value for LWIP_DBG_TYPES_ON: LWIP_DBG_ON ---*/
+#define LWIP_DBG_TYPES_ON LWIP_DBG_OFF
 /*----- Default Value for ETHARP_DEBUG: LWIP_DBG_OFF ---*/
 #define ETHARP_DEBUG LWIP_DBG_ON
 /*----- Default Value for NETIF_DEBUG: LWIP_DBG_OFF ---*/
@@ -115,6 +117,8 @@
 #define IP_DEBUG LWIP_DBG_ON
 /*----- Default Value for RAW_DEBUG: LWIP_DBG_OFF ---*/
 #define RAW_DEBUG LWIP_DBG_ON
+/*----- Default Value for SYS_DEBUG: LWIP_DBG_OFF ---*/
+#define SYS_DEBUG LWIP_DBG_ON
 /*----- Default Value for TCP_DEBUG: LWIP_DBG_OFF ---*/
 #define TCP_DEBUG LWIP_DBG_ON
 /*----- Default Value for TCP_INPUT_DEBUG: LWIP_DBG_OFF ---*/
