@@ -21,6 +21,8 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "lwip.h"
+#include <stdarg.h>
+#include <string.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -108,6 +110,7 @@ int main(void)
   MX_LWIP_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  my_printf("Deine Oma faehrt im Huehnerstall Motorrad\n");
   LWIP_PLATFORM_DIAG(("Debug Test %d\n", 1));
   LWIP_PLATFORM_DIAG(("Debug Test %d\n", 2));
   /* USER CODE END 2 */

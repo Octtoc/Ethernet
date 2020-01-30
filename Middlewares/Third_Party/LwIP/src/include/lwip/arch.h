@@ -75,8 +75,10 @@
  * in turn pull in a lot of standard libary code. In resource-constrained 
  * systems, this should be defined to something less resource-consuming.
  */
+void vprint_o(const char *fmt, va_list argp);
+void my_printf(const char *fmt, ...);
 #ifndef LWIP_PLATFORM_DIAG
-#define LWIP_PLATFORM_DIAG(x) do {printf x;} while(0)
+#define LWIP_PLATFORM_DIAG(x) my_printf x
 #include <stdio.h>
 #include <stdlib.h>
 #endif
