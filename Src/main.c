@@ -21,6 +21,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "lwip.h"
+#include <stdarg.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -58,7 +59,22 @@ static void MX_USART2_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void vprint_o(const char *fmt, va_list argp)
+{
+    char string[200];
+    if(0 < vsprintf(string,fmt,argp)) // build string
+    {
+        HAL_UART_Transmit(&huart2, (uint8_t*)string, strlen(string), 0xffffff); // send message via UART
+    }
+}
 
+void my_printf(const char *fmt, ...) // custom printf() function
+{
+    va_list argp;
+    va_start(argp, fmt);
+    vprint_o(fmt, argp);
+    va_end(argp);
+}
 /* USER CODE END 0 */
 
 /**
@@ -94,6 +110,8 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   tcp_echoserver_init();
+  LWIP_PLATFORM_DIAG(("Debug Test %d\n", 1));
+  LWIP_PLATFORM_DIAG(("Debug Test %d\n", 2));
   /* USER CODE END 2 */
  
  
